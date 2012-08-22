@@ -1,5 +1,5 @@
 ﻿<a name="title" />
-# Deploying Active Directory Enabld Clients #
+# Deploying Active Directory #
 
 ---
 <a name="Overview" />
@@ -40,8 +40,8 @@ In order to execute this demo you need to set up your environment.
 	- Target Storage Account Name, Container and Key where the demo VHDs will be copied to. 
 		- The Storage Account Should Be in West US to allow the VHDs to copy in a timely manner.
 	- Subscription Name - value can be retrieved from PowerShell by running **Get-AzureSubscription | select SubscriptionName**.
-   - Unique name for the Cloud Service container that will be used when creating the VMs using the setup script.
-   - Unique name for the Cloud Service container that will be used when creating the VMs using the PowerShell demo.
+   - Unique name for the Cloud Service container that will be used when creating the domain controller in the PowerShell Demo.
+   - Unique name for the Cloud Service container that will be used when creating domain joined member servers using the PowerShell demo (must be different than the DC cloud service).
 
 1. Run the **Setup-1.Azure.cmd** script to copy the prepared VHDs to your storage account (the storage account must be in West US).
 

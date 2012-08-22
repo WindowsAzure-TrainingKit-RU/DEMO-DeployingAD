@@ -12,6 +12,10 @@
      <container>[STORAGE CONTAINER]</container>
    </storageAccount>
 
+   <!-- Name of the cloud service the Active Directory Domain Controller will be created in (MUST BE UNIQUE)-->
+   <!-- The cleanup script will delete this service and all VMs under it to reset the demo -->
+   <cloudServiceName1>[AD Domain Controller Cloud Service]</cloudServiceName1> 
+
    <!-- Name of the cloud service the Active Directory Member Servers will be created in (MUST BE UNIQUE)-->
    <!-- The cleanup script will delete this service and all VMs under it to reset the demo -->
    <cloudServiceName1>[AD Member Server Cloud Service]</cloudServiceName1> 
