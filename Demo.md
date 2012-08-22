@@ -117,7 +117,7 @@ $domVM = New-AzureVMConfig -Name 'ad-ms1' -InstanceSize Small -ImageName $image 
 
 $dns = New-AzureDns -Name 'ad-dc' -IPAddress $dcip
      
-New-AzureVM -ServiceName $xml.configuration.cloudServiceName2 -AffinityGroup 'MyVNETAG' -VNetName 'SimpleVNET' -DnsSettings $dns -VMs $domVM
+New-AzureVM -ServiceName $xml.configuration.cloudServiceName2 -AffinityGroup 'MyVNETAG' -VNetName 'SimpleVNET' -DnsSettings $dns -VMs $domVM -DNSSettings $dns
 
 ````
 
