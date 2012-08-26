@@ -7,7 +7,7 @@
 		<Email>mwasham@microsoft.com</Email>
 	</Author>
 	<Description>This demo shows how you can easily migrate an application that runs in a web farm environment to Windows Azure</Description>
-	<Document ConversionType="Html">Demo.md</Document>
+	<Document ConversionType="Html">.\Demo.md</Document>
 	<Title>Migrating a Web Farm</Title>
 	<Version>1.0.0</Version>
 	<Source>.\Source</Source>
