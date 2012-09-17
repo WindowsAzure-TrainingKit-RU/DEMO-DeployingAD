@@ -56,19 +56,19 @@ In order to execute this demo you need to set up your environment.
 1. Configure the demo virtual network that the demonstration virtual machines will be deployed to. 
 
 1. Create an affinity group for your virtual network in the region where your cloud services will be hosted.
-			![create-affinity-group](images/create-affinity-group.png?raw=true)
+			![create-affinity-group](Images/create-affinity-group.png?raw=true)
 
 1. Create a simple virtual network and specify the previously created affinity group along with a single subnet network configuration.
 
-	![simple-vnet](images/simple-vnet.png?raw=true)
+	![simple-vnet](Images/simple-vnet.png?raw=true)
 
 1. Set the address space to 10.1.0.0/16 and add a subnet called AppSubnet with a range of 10.1.1.0/24.
 
-	![simple-vnet-2](images/simple-vnet-2.png?raw=true)
+	![simple-vnet-2](Images/simple-vnet-2.png?raw=true)
 
 1. Accept the defaults for the rest of the configuration.
 
-	![simple-vnet-3](images/simple-vnet-3.png?raw=true)
+	![simple-vnet-3](Images/simple-vnet-3.png?raw=true)
 
 <a name="segment1" />
 
