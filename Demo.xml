@@ -7,7 +7,7 @@
 		<Email>mwasham@microsoft.com</Email>
 	</Author>
 	<Description>This demo shows how you can deploy a domain controller in Windows Azure.</Description>
-	<Document ConversionType="Html">.\Demo.md</Document>
+	<Document ConversionType="Html">Demo.md</Document>
 	<Title>Deploying Active Directory</Title>
 	<Version>1.0.0</Version>
 	<Source>.\Source</Source>
