@@ -32,7 +32,7 @@ In order to execute this demo you need to set up your environment.
 1. Install the node.js command line tools for Windows Azure by running the following command at a command prompt:
 
 	````PowerShell
-	npm install azure -g
+	npm install azure-cli -g
 	````
 
 1. Modify the Config.Azure.XML for your Windows Azure Subscription. The following values are needed:

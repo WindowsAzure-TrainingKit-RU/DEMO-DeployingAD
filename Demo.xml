@@ -9,7 +9,7 @@
   <Description>This demo shows how you can deploy a domain controller in Windows Azure.</Description>
   <Document ConversionType="Html">Demo.md</Document>
   <Title>Deploying Active Directory</Title>
-  <Version>1.0.1</Version>
+  <Version>1.0.2</Version>
   <Source>.\Source</Source>
   <DependencyChecker></DependencyChecker>
   <CustomProperties>
