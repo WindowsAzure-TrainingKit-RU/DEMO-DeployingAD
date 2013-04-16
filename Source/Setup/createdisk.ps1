@@ -6,18 +6,18 @@ function CheckLease([string] $blobpath)
 	$acctKey = $xml.configuration.storageAccount.key
 	
     $creds = "DefaultEndpointsProtocol=http;AccountName=$($acctName);AccountKey=$($acctKey)"
-	$acctobj = [Microsoft.WindowsAzure.CloudStorageAccount]::Parse($creds)
+	$acctobj = [Microsoft.WindowsAzure.Storage.CloudStorageAccount]::Parse($creds)
 	$uri = $acctobj.Credentials.TransformUri($uri)
-	$blobclient = New-Object Microsoft.WindowsAzure.StorageClient.CloudBlobClient($acctobj.BlobEndpoint, $acctobj.Credentials)
-	$blobclient.Timeout = (New-TimeSpan -Minutes 1)
-	$blob = New-Object Microsoft.WindowsAzure.StorageClient.CloudPageBlob($blobpath, $blobclient)
+	$blobclient = New-Object Microsoft.WindowsAzure.Storage.Blob.CloudBlobClient($acctobj.BlobEndpoint, $acctobj.Credentials)
+	$blobclient.ServerTimeout = (New-TimeSpan -Minutes 1)
+	$blob = New-Object Microsoft.WindowsAzure.Storage.Blob.CloudPageBlob($blobpath, $acctobj.Credentials)
 	
     try
 	{
 		$blob.FetchAttributes()
 		Write-Host $blobpath " Lease Status: " $blob.Properties.LeaseStatus
 		
-		if($blob.Properties.LeaseStatus -eq [Microsoft.WindowsAzure.StorageClient.LeaseStatus]::Locked) 
+		if($blob.Properties.LeaseStatus -eq [Microsoft.WindowsAzure.Storage.Blob.LeaseStatus]::Locked) 
 		{
 			write-host "Blob is Locked - Still Copying." -foregroundcolor "red"
 			return $false
