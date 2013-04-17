@@ -77,8 +77,6 @@ In order to execute this demo you need to set up your environment.
 
 	![simple-vnet-3](Images/simple-vnet-3.png?raw=true)
 
-<a name="segment1" />
-
 1. Run powershell_ise and and run the following script. Make sure to replace the placeholder with the path to **Config.Azure.xml** in **Source** folder. The script will provision a virtual machine from the disk that was copied over earlier. The disk already has the Active Directory role provisioned and a forest created.
 
 	````PowerShell
