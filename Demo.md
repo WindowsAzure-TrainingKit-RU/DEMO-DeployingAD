@@ -25,7 +25,7 @@ In this demonstration you will walk through the process of deploying a domain co
 
 In order to execute this demo you need to set up your environment.
 
-1. Download, install and configure the Windows Azure PowerShell cmdlets. Instructions on how to configuration the cmdlets with your subscription can be found here: http://msdn.microsoft.com/en-us/library/windowsazure/jj554332.aspx
+1. Download, install and configure the Windows Azure PowerShell cmdlets. Instructions on how to configure the cmdlets with your subscription can be found here: http://msdn.microsoft.com/en-us/library/windowsazure/jj554332.aspx
 
 1. Download and install the latest node.js library from: http://nodejs.org 
 
@@ -63,7 +63,7 @@ In order to execute this demo you need to set up your environment.
 <a name="Demo" />
 ## Demo ##
 
-1. Configure the demo virtual network that the demo virtual machines will be deployed to. 
+1. Configure the demo virtual network where the demo virtual machines will be deployed to. 
 
 1. Create a simple virtual network with an affinity group for it in the region where your cloud services will be hosted and specify the affinity group along with a single subnet network configuration.
 
@@ -105,10 +105,10 @@ In order to execute this demo you need to set up your environment.
 	Get-AzureVMImage | ft imagename
 	````
 
-1. Paste in the following script to create a member server joined VM. Update the $dcip variable to use the IP address of the domain controller, the Config.Azure.xml file path for the $xml variable and the $image variable with a Windows Server image name before running.
+1. Paste in the following script to create a member server joined VM. Update the $dcip variable to use the IP address of the domain controller, the $adminUserName variable with a user name of your choice, the Config.Azure.xml file path for the $xml variable and the $image variable with a Windows Server image name before running.
 
 	````PowerShell
-	$dcip = '[IP ADDRESS OF DOMAIN CONTROLLER]'
+	$dcip = '[IP-ADDRESS-OF-DOMAIN-CONTROLLER]'
 	[xml]$xml = Get-Content '[AZURE-CONFIGURATION-FILE-PATH]'
 	$image = 'a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-Datacenter-201302.01-en.us-30GB.vhd'
 
@@ -120,10 +120,11 @@ In order to execute this demo you need to set up your environment.
 	$pass = 'pass@word1'
 	$domjoin = 'fabrikam.com'
 	$domuser = 'administrator'
+	$adminUserName = '[YOUR-USER-NAME]'
 
 	$domVM = New-AzureVMConfig -Name 'ad-ms1' -InstanceSize Small -ImageName $image |      
 		
-			Add-AzureProvisioningConfig -WindowsDomain -JoinDomain $domjoin -Domain $dom -DomainPassword $pass -Password $pass -DomainUserName $domuser -MachineObjectOU $ou |
+			Add-AzureProvisioningConfig -WindowsDomain -JoinDomain $domjoin -Domain $dom -DomainPassword $pass -AdminUserName $adminUserName -Password $pass -DomainUserName $domuser -MachineObjectOU $ou |
 						 Set-AzureSubnet -SubnetNames $subnet
 
 
