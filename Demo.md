@@ -37,17 +37,18 @@ In order to execute this demo you need to set up your environment.
 
 1. Modify the Config.Azure.xml located in **Source** folder for your Windows Azure Subscription. The following values are needed:
 	- Target Storage Account Name, Container and Key where the demo VHDs will be copied to. 
-		- The Storage Account should be in West US to allow the VHDs to copy in a timely manner.
+	- The Storage Account should be in West US to allow the VHDs to copy in a timely manner.
 	- Subscription Name - value can be retrieved from PowerShell by running **Get-AzureSubscription | select SubscriptionName**.
-	- Unique name for the Cloud Service container that will be used when creating the domain controller in the PowerShell Demo (does not need to be pre-created).	- Unique name for the Cloud Service container that will be used when creating domain joined member servers using the PowerShell demo (does not need to be pre-created and must be different than the DC cloud service).
+	- Unique name for the Cloud Service container that will be used when creating the domain controller in the PowerShell Demo (does not need to be pre-created).	
+	- Unique name for the Cloud Service container that will be used when creating domain joined member servers using the PowerShell demo (does not need to be pre-created and must be different than the DC cloud service).
 
-1. If you have not used Windows Azure PowerShell before you need to download a publish settings file. To do this, run the following script. Sign in to the Windows Azure Management Portal, and then follow the instructions to download your Windows Azure publishing settings. Use your browser to save the file as a .publishsettings file to your local computer. Take a note of the location of the file.
+1. If you have not used Windows Azure PowerShell before you need to download a publish settings file. To do this, run the following script. Sign in to the Windows Azure Management Portal, and then follow the instructions to download your Windows Azure publish settings. Use your browser to save the file with extension _.publishsettings_ file to your local computer. Take a note of the location of the file.
 
 	````PowerShell
 	Get-AzurePublishSettingsFile
 	````
 
-1. Then replace the placeholder with your publish-setting file’s path and execute this script.
+1. Then replace the placeholder with your publish settings file’s path and execute this script.
 
 	````PowerShell
 	Import-AzurePublishSettingsFile '[YOUR-PUBLISH-SETTINGS-PATH]'   
